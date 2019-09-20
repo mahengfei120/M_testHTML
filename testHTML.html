@@ -23,7 +23,7 @@ document.querySelector('.getLocation').addEventListener('click', function () {
 	var options={
             enableHighAccuracy:true,
             maximunAge:1000,
-            timeout:45000
+            timeout:10000
     };
     if(window.navigator.geolocation){
         navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options);
@@ -56,13 +56,13 @@ function successCallback(position){
 function errorCallback(error){
    switch(error.code){
    case error.PERMISSION_DENIED:
-       alert("you have denied access to your position .");
+       alert("浏览器阻止了定位操作");
        break;
    case error.POSITION_UNAVAILABLE:
-       alert("there was a problem getting yout position .");
+       alert("无法获得当前位置");
        break;
    case error.TIMEOUT:
-       alert("The application has timed out attempting to get your location .");
+       alert("定位超时");
        break;
        
    }
