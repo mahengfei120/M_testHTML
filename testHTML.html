@@ -48,8 +48,8 @@ function successCallback(position){
         output+=" Speed :"+position.coords.Speed +" m/s";
     }
     output+=" Time of Position "+position.timestamp +" m/s";
-    // alert(output);
-	document.querySelector('.getLocation').innerHTML(output)
+    alert(output);
+	document.querySelector('.location_str').innerHTML(output)
 }
 
 
