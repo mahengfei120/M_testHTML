@@ -34,33 +34,6 @@
 
 <script>
     (function () {
-        console.log('ddddddddd')
-        var myCanVas = document.querySelector('.my_cnavas')
-        var imgCanvas = myCanVas.getContext('2d')
-        var image = new Image()
-        //image.setAttribute('crossOrigin', 'Anonymous')
-        image.src = 'https://wbs.zyebank.net/pweixin/weixin/htmls/KaiMenHong/images/popMa.png'
-        image.onload = function () {
-			setTimeout(function () {
-				imgCanvas.drawImage(image, 0, 0, myCanVas.offsetWidth, myCanVas.offsetHeight)
-				//imgCanvas.drawImage(image2, 48, 163, 95, 95)
-				imgCanvas.font = 'bold 14px 黑体'
-				imgCanvas.fillStyle = "#333333"
-				imgCanvas.fillText('您的好友 **马', 15, 400)
-				imgCanvas.font = '16px 黑体'
-				imgCanvas.fillText('邀请您一起体验中原银行个人贷款产品，', 15, 430)
-				imgCanvas.fillText('推荐好友还有机会的千元大奖呦~', 15, 450)
-			}, 100)
-		}
-        //var image2 = new Image()
-        //image2.src = './777.jpg'
-        // image.setAttribute('crossOrigin', 'Anonymous')
-        
-        document.querySelector('.header').addEventListener('click', function () {
-            var imgSSS = myCanVas.toDataURL()
-            console.log(imgSSS)
-            // document.querySelector('.testImg').src = imgSSS
-        })
 
 
 
