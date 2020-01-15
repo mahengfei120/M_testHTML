@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>��ԭ����</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="firstPage">
+    <div class="header">测试HTML</div>
+    <div>
+        <canvas class="my_cnavas" width="350" height="480" style="background: #cccccc;"></canvas>
+    </div>
+    <img src="" class="testImg" crossorigin="Anonymous">
+</div>
+
+<script>
+    (function () {
+        console.log('ddddddddd')
+        var myCanVas = document.querySelector('.my_cnavas')
+        var imgCanvas = myCanVas.getContext('2d')
+        var image = new Image()
+        //image.setAttribute('crossOrigin', 'Anonymous')
+        image.src = 'https://wbs.zyebank.net/pweixin/weixin/htmls/KaiMenHong/images/popMa.png'
+        image.onload = function () {
+			setTimeout(function () {
+				imgCanvas.drawImage(image, 0, 0, myCanVas.offsetWidth, myCanVas.offsetHeight)
+				//imgCanvas.drawImage(image2, 48, 163, 95, 95)
+				imgCanvas.font = 'bold 14px 黑体'
+				imgCanvas.fillStyle = "#333333"
+				imgCanvas.fillText('您的好友 **马', 15, 400)
+				imgCanvas.font = '16px 黑体'
+				imgCanvas.fillText('邀请您一起体验中原银行个人贷款产品，', 15, 430)
+				imgCanvas.fillText('推荐好友还有机会的千元大奖呦~', 15, 450)
+			}, 100)
+		}
+        //var image2 = new Image()
+        //image2.src = './777.jpg'
+        // image.setAttribute('crossOrigin', 'Anonymous')
+        
+        document.querySelector('.header').addEventListener('click', function () {
+            var imgSSS = myCanVas.toDataURL()
+            console.log(imgSSS)
+            // document.querySelector('.testImg').src = imgSSS
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })();
+</script>
+
+</body>
+
+</html>
