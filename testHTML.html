@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta content="text/html; charset=UTF-8">
-		<title>一个测试HTML的页面</title>
+		<title>一个测试HTML的页111面</title>
 	</head>
 	<body>
 		<div class="getLocation">获取当前地理位置</div>
@@ -24,7 +24,7 @@
 // 		window.location.replace('https://mahengfei120.github.io/M_testHTML/xy.html')
 // 	})()
 	(function () {
-      window.open('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0f4ab8a6e6185c70&redirect_uri=https%3A%2F%2Fwbs.zyebank.com%2Fpweixin%2Fweixin%2Findex.html%3Fpage%3Duz0TG5NcEjUM5dh%2BCrCOUj8JlR1G74CiBmoVlM98BiWajBMtH953tCmlIpL%2FLP6SMOVxfhrIH14%3D&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1#wechat_redirect')
+      parent.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0f4ab8a6e6185c70&redirect_uri=https%3A%2F%2Fwbs.zyebank.com%2Fpweixin%2Fweixin%2Findex.html%3Fpage%3Duz0TG5NcEjUM5dh%2BCrCOUj8JlR1G74CiBmoVlM98BiWajBMtH953tCmlIpL%2FLP6SMOVxfhrIH14%3D&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1#wechat_redirect'
     })()
 document.querySelector('.getLocation').addEventListener('click', function () {
 	var options={
