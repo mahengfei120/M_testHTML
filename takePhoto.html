@@ -14,7 +14,11 @@
             display:inline-block;
             border-bottom: 5px solid red;
             padding-bottom: 10px;
-            vertical-align: top;
+        }
+        .border_none {
+            display:inline-block;
+            border-bottom: 5px solid white;
+            padding-bottom: 10px;
         }
     </style>
 <body>
@@ -25,7 +29,7 @@
 <img id="imgTag" src="" alt="imgTag">
 <button onclick="closeMedia()">关闭摄像头</button>
 
-    <div class="div-h2"><span class="border_b">产</span>品特点</div>
+    <div class="div-h2"><span class="border_b">产</span><span class="border_none">品特点1</span></div>
 </body>
 <script>
     let mediaStreamTrack=null; // 视频对象(全局)
