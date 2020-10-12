@@ -4,6 +4,19 @@
     <title>js调用摄像头拍照上传图片</title>
     <meta charset="utf-8">
 </head>
+    <style>
+        .div-h2 {
+            padding-left: 30px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .border_b {
+            display:inline-block;
+            border-bottom: 2px solid red;
+            padding-bottom: 10px;
+            vertical-align: top;
+        }
+    <style/>
 <body>
 <button onclick="openMedia()">开启摄像头</button>
 <video id="video" width="500px" height="500px" autoplay="autoplay"></video>
@@ -12,6 +25,7 @@
 <img id="imgTag" src="" alt="imgTag">
 <button onclick="closeMedia()">关闭摄像头</button>
 
+    <div class="div-h2"><span class="border_b">产<span/>品特点</div>
 <script>
     let mediaStreamTrack=null; // 视频对象(全局)
     let video ;
