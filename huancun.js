@@ -1,3 +1,3 @@
 window.onload = function () {
-  alert('555555')
+  alert('666666')
 }
