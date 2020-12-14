@@ -22,7 +22,7 @@
         }
     </style>
 <body>
-<button onclick="openMedia()">开启摄像头</button>
+<button onclick="openMedia()">开启摄像头2</button>
 <video id="video" width="500px" height="500px" autoplay="autoplay"></video>
 <canvas id="canvas" width="500px" height="500px"></canvas>
 <button onclick="takePhoto()">拍照</button>
@@ -31,6 +31,11 @@
 
     <div class="div-h2"><span class="border_b">产</span><span class="border_none">品特点1</span></div>
 </body>
+<script src="huancunjs.js" id="main"></script>
+<!-- <script type="text/javascript">
+    var js = document.getElementById('main');
+    js.src = 'huancunjs.js?v='+ new Date().getTime();
+</script> -->
 <script>
     let mediaStreamTrack=null; // 视频对象(全局)
     let video ;
