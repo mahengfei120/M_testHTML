@@ -26,27 +26,28 @@
 
 <body>
     <div>
-        <button onclick="call()">下载图片</button>
-      <img src="">
+        <button>下载图片</button>
+      <img src="001.gif">
     </div>
     <script>
-        let canvas = document.createElement("canvas");
-      canvas.width = image.width;
-      canvas.height = image.height;
-      let context = canvas.getContext("2d");
-      context.drawImage(image, 0, 0, image.width, image.height);
-      // window.navigator.msSaveBlob(canvas.msToBlob(), 'image.jpg');
-      let url = canvas.toDataURL("image/png");
-      let a = document.createElement("a");
-      let event = new MouseEvent("click");
-      if (imgName) {
-        a.download = imgName + ".jpg";
-      } else {
-        a.download = "down_load.jpg";
-      }
-      a.href = url;
-      // 触发a的单击事件
-      a.dispatchEvent(event);
+        document.querySelector('button').addEventListener('click', function () {
+          var image = document.querySelector('img')
+          let canvas = document.createElement("canvas");
+          canvas.width = image.width;
+          canvas.height = image.height;
+          let context = canvas.getContext("2d");
+          context.drawImage(image, 0, 0, image.width, image.height);
+          // window.navigator.msSaveBlob(canvas.msToBlob(), 'image.jpg');
+          let url = canvas.toDataURL("image/png");
+          let a = document.createElement("a");
+          let event = new MouseEvent("click");
+          a.download = "down_load.jpg";
+
+          a.href = url;
+          // 触发a的单击事件
+          a.dispatchEvent(event);
+        })
+        
     </script>
 </body>
 
