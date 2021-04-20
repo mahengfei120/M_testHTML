@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="NativeShare 是一个整合了各大移动端浏览器调用原生分享的插件！！！">
+    <title>测试分享</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="call()">下载图片</button>
+      <img src="">
+    </div>
+    <script>
+        let canvas = document.createElement("canvas");
+      canvas.width = image.width;
+      canvas.height = image.height;
+      let context = canvas.getContext("2d");
+      context.drawImage(image, 0, 0, image.width, image.height);
+      // window.navigator.msSaveBlob(canvas.msToBlob(), 'image.jpg');
+      let url = canvas.toDataURL("image/png");
+      let a = document.createElement("a");
+      let event = new MouseEvent("click");
+      if (imgName) {
+        a.download = imgName + ".jpg";
+      } else {
+        a.download = "down_load.jpg";
+      }
+      a.href = url;
+      // 触发a的单击事件
+      a.dispatchEvent(event);
+    </script>
+</body>
+
+</html>
