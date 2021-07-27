@@ -6,6 +6,7 @@
 		<meta content="text/html; charset=UTF-8">
 		<title>一个测试HTML的页111面</title>
 	</head>
+	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key='2b51190616374d97d2656794a3cea4df'"></script> 
 	<body>
 		<div class="getLocation">获取当前地理位置</div>
 		<div class="test_size">
@@ -22,6 +23,7 @@
 		<div class="font_4p">这是一行小字4px</div>
 		<div class="location_str"></div>
 		<input type="file" accept="image/*" capture="camera" style="background: #cccccc;">
+		<div id="container"></div> 
 	</body>
 	<style>
 		.getLocation {
@@ -43,11 +45,24 @@
 		.font_8p{font-size: 8px}
 		.font_6p{font-size: 6px}
 		.font_4p{font-size: 4px}
+		#container {width:300px; height: 180px; }  
 	</style>
 </html>
 <script type="text/javascript">
+	var map;
+	 window.onLoad  = function(){
+		map = new AMap.Map('container', {
+			zoom:11,//级别
+			center: [116.397428, 39.90923],//中心点坐标
+			viewMode:'2D'//使用3D视图
+	        });
+	  }
 	
 document.querySelector('.getLocation').addEventListener('click', function () {
+	var marker = new AMap.Marker({
+         position: [113.666275, 34.752481]
+    })
+    map.add(marker);
 	var options={
             enableHighAccuracy:true,
             maximunAge:1000,
