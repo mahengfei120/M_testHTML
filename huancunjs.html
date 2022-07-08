@@ -1,5 +1,4 @@
 
-
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -10,34 +9,36 @@
 		<meta name="format-detection" content="telephone=no" />		
 	</head>
 	<body>
-		<div>这是一个测试缓存的HTML页面</div>
-    <button onclick="addL">点击添加监听</button>
-    <button onclick="removeL">点击移除监听</button>
-    <button onclick="foOther">跳定位页</button>
+		<div>这是一个测试缓存的HTML页面</div><br>
+    <div class="addL">点击添加监听</div><br>
+    <div class="removeL">点击移除监听</div><br>
+    <div class="foOther">跳定位页</div>
 	</body>
 	<script>
 		window.onload = function () {
 			
-      var addL = function () {
-        window.history.pushState(null, null, window.location.href);
-			  window.history.forward(1);
-        window.addEventListener('popstate', lisF)
-      };
-      var removeL = function () {
-        window.removeEventListener('popstate', lisF)
-      };
       var lisF = function () {
         history.pushState(null, null, location.href);
 				alert('用户点击返回键l')
 				window.history.forward(1);
       };
-      var foOther = function () {
+      document.querySelector('.addL').addEventListener('click', function () {
+        alert('添加监听')
+        window.history.pushState(null, null, window.location.href);
+			  window.history.forward(1);
+        window.addEventListener('popstate', lisF)
+      });
+      document.querySelector('.removeL').addEventListener('click', function () {
+        alert('移除监听')
+        window.removeEventListener('popstate', lisF)
+      });
+      console.log('3333333333');
+      document.querySelector('.foOther').addEventListener('click', function () {
+        console.log('eee')
         window.location.href = 'https://mahengfei120.github.io/M_testHTML/getLocation.html';
-      };
+      });
 		}
-		
 	</script>
 </html>
 	
 	
-
