@@ -1,4 +1,5 @@
 
+
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -16,12 +17,17 @@
 	</body>
 	<script>
 		window.onload = function () {
-			
+			var count = 0;
       var lisF = function () {
         history.pushState(null, null, location.href);
-				alert('用户点击返回键l')
+        console.log(count)
+        if (count) {
+          alert('用户点击返回键l');
+        }
+        count++;
 				window.history.forward(1);
       };
+      lisF();
       document.querySelector('.addL').addEventListener('click', function () {
         alert('添加监听')
         window.history.pushState(null, null, window.location.href);
@@ -42,3 +48,4 @@
 </html>
 	
 	
+
