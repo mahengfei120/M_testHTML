@@ -11,7 +11,16 @@
 	<body>
 		<div>这是一个测试缓存的HTML页面</div>
 	</body>
-	<script src="./huancun.js"></script>
+// 	<script src="./huancun.js"></script>
+	<script>
+		history.pushState(null, null, location.href);
+		window.history.forward(1);
+		window.addEventListener('popstate', function (event) {
+			history.pushState(null, null, location.href);
+			alert('用户点击返回键l')
+			window.history.forward(1);
+		})
+	</script>
 </html>
 	
 	
