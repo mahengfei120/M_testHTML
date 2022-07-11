@@ -13,6 +13,7 @@
 		<div>这是一个测试缓存的HTML页面</div><br>
     <div class="addL">点击添加监听</div><br>
     <div class="removeL">点击移除监听</div><br>
+    <div class="foback">返回</div><br>
     <div class="foOther">跳定位页</div>
 	</body>
 	<script>
@@ -22,7 +23,7 @@
         history.pushState(null, null, location.href);
         console.log(count)
         if (count) {
-          alert('用户点击返回键l');
+          window.location.href = 'https://mahengfei120.github.io/M_testHTML/getLocation.html';
         }
         count++;
 				window.history.forward(1);
@@ -38,7 +39,11 @@
         alert('移除监听')
         window.removeEventListener('popstate', lisF)
       });
-      console.log('3333333333');
+      document.querySelector('.foback').addEventListener('click', function () {
+        alert('移除监听')
+        window.removeEventListener('popstate', lisF)
+        window.history.go(-2);
+      });
       document.querySelector('.foOther').addEventListener('click', function () {
         console.log('eee')
         window.location.href = 'https://mahengfei120.github.io/M_testHTML/getLocation.html';
@@ -47,5 +52,7 @@
 	</script>
 </html>
 	
+	
+
 	
 
