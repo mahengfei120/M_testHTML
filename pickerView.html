@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./pickerView.js?1" charset="utf-8"></script>
+    <title>选择器</title>
+</head>
+
+<body>
+  <button style="font-size:50px;" id="btn">按钮</button>
+  <div class="showText"></div>
+
+    <script type="text/javascript">
+        var cityList = '{"AreaCode":410000,"ChildAreaCode":[{"AreaCode":410100,"ChildAreaCode":[{"AreaCode":410102,"AreaName":"中原区"},{"AreaCode":410103,"AreaName":"二七区"},{"AreaCode":410104,"AreaName":"管城回族区"},{"AreaCode":410105,"AreaName":"金水区"},{"AreaCode":410106,"AreaName":"上街区"},{"AreaCode":410108,"AreaName":"惠济区"},{"AreaCode":410122,"AreaName":"中牟县"},{"AreaCode":410181,"AreaName":"巩义市"},{"AreaCode":410182,"AreaName":"荥阳市"},{"AreaCode":410183,"AreaName":"新密市"},{"AreaCode":410184,"AreaName":"新郑市"},{"AreaCode":410185,"AreaName":"登封市"}],"AreaName":"郑州市"},{"AreaCode":410200,"ChildAreaCode":[{"AreaCode":410202,"AreaName":"龙亭区"},{"AreaCode":410203,"AreaName":"顺河回族区"},{"AreaCode":410204,"AreaName":"鼓楼区"},{"AreaCode":410205,"AreaName":"禹王台区"},{"AreaCode":410212,"AreaName":"祥符区"},{"AreaCode":410221,"AreaName":"杞县"},{"AreaCode":410222,"AreaName":"通许县"},{"AreaCode":410223,"AreaName":"尉氏县"},{"AreaCode":410225,"AreaName":"兰考县"}],"AreaName":"开封市"},{"AreaCode":410300,"ChildAreaCode":[{"AreaCode":410302,"AreaName":"老城区"},{"AreaCode":410303,"AreaName":"西工区"},{"AreaCode":410304,"AreaName":"瀍河回族区"},{"AreaCode":410305,"AreaName":"涧西区"},{"AreaCode":410306,"AreaName":"吉利区"},{"AreaCode":410311,"AreaName":"洛龙区"},{"AreaCode":410322,"AreaName":"孟津县"},{"AreaCode":410323,"AreaName":"新安县"},{"AreaCode":410324,"AreaName":"栾川县"},{"AreaCode":410325,"AreaName":"嵩县"},{"AreaCode":410326,"AreaName":"汝阳县"},{"AreaCode":410327,"AreaName":"宜阳县"},{"AreaCode":410328,"AreaName":"洛宁县"},{"AreaCode":410329,"AreaName":"伊川县"},{"AreaCode":410381,"AreaName":"偃师市"}],"AreaName":"洛阳市"},{"AreaCode":410400,"ChildAreaCode":[{"AreaCode":410402,"AreaName":"新华区"},{"AreaCode":410403,"AreaName":"卫东区"},{"AreaCode":410404,"AreaName":"石龙区"},{"AreaCode":410411,"AreaName":"湛河区"},{"AreaCode":410421,"AreaName":"宝丰县"},{"AreaCode":410422,"AreaName":"叶县"},{"AreaCode":410423,"AreaName":"鲁山县"},{"AreaCode":410425,"AreaName":"郏县"},{"AreaCode":410481,"AreaName":"舞钢市"},{"AreaCode":410482,"AreaName":"汝州市"}],"AreaName":"平顶山市"},{"AreaCode":410500,"ChildAreaCode":[{"AreaCode":410502,"AreaName":"文峰区"},{"AreaCode":410503,"AreaName":"北关区"},{"AreaCode":410505,"AreaName":"殷都区"},{"AreaCode":410506,"AreaName":"龙安区"},{"AreaCode":410522,"AreaName":"安阳县"},{"AreaCode":410523,"AreaName":"汤阴县"},{"AreaCode":410526,"AreaName":"滑县"},{"AreaCode":410527,"AreaName":"内黄县"},{"AreaCode":410581,"AreaName":"林州市"}],"AreaName":"安阳市"},{"AreaCode":410600,"ChildAreaCode":[{"AreaCode":410602,"AreaName":"鹤山区"},{"AreaCode":410603,"AreaName":"山城区"},{"AreaCode":410611,"AreaName":"淇滨区"},{"AreaCode":410621,"AreaName":"浚县"},{"AreaCode":410622,"AreaName":"淇县"}],"AreaName":"鹤壁市"},{"AreaCode":410700,"ChildAreaCode":[{"AreaCode":410702,"AreaName":"红旗区"},{"AreaCode":410703,"AreaName":"卫滨区"},{"AreaCode":410704,"AreaName":"凤泉区"},{"AreaCode":410711,"AreaName":"牧野区"},{"AreaCode":410721,"AreaName":"新乡县"},{"AreaCode":410724,"AreaName":"获嘉县"},{"AreaCode":410725,"AreaName":"原阳县"},{"AreaCode":410726,"AreaName":"延津县"},{"AreaCode":410727,"AreaName":"封丘县"},{"AreaCode":410728,"AreaName":"长垣县"},{"AreaCode":410781,"AreaName":"卫辉市"},{"AreaCode":410782,"AreaName":"辉县市"}],"AreaName":"新乡市"},{"AreaCode":410800,"ChildAreaCode":[{"AreaCode":410802,"AreaName":"解放区"},{"AreaCode":410803,"AreaName":"中站区"},{"AreaCode":410804,"AreaName":"马村区"},{"AreaCode":410811,"AreaName":"山阳区"},{"AreaCode":410821,"AreaName":"修武县"},{"AreaCode":410822,"AreaName":"博爱县"},{"AreaCode":410823,"AreaName":"武陟县"},{"AreaCode":410825,"AreaName":"温县"},{"AreaCode":410882,"AreaName":"沁阳市"},{"AreaCode":410883,"AreaName":"孟州市"}],"AreaName":"焦作市"},{"AreaCode":410900,"ChildAreaCode":[{"AreaCode":410902,"AreaName":"华龙区"},{"AreaCode":410922,"AreaName":"清丰县"},{"AreaCode":410923,"AreaName":"南乐县"},{"AreaCode":410926,"AreaName":"范县"},{"AreaCode":410927,"AreaName":"台前县"},{"AreaCode":410928,"AreaName":"濮阳县"}],"AreaName":"濮阳市"},{"AreaCode":411000,"ChildAreaCode":[{"AreaCode":411002,"AreaName":"魏都区"},{"AreaCode":411003,"AreaName":"建安区"},{"AreaCode":411024,"AreaName":"鄢陵县"},{"AreaCode":411025,"AreaName":"襄城县"},{"AreaCode":411081,"AreaName":"禹州市"},{"AreaCode":411082,"AreaName":"长葛市"}],"AreaName":"许昌市"},{"AreaCode":411100,"ChildAreaCode":[{"AreaCode":411102,"AreaName":"源汇区"},{"AreaCode":411103,"AreaName":"郾城区"},{"AreaCode":411104,"AreaName":"召陵区"},{"AreaCode":411121,"AreaName":"舞阳县"},{"AreaCode":411122,"AreaName":"临颍县"}],"AreaName":"漯河市"},{"AreaCode":411200,"ChildAreaCode":[{"AreaCode":411202,"AreaName":"湖滨区"},{"AreaCode":411203,"AreaName":"陕州区"},{"AreaCode":411221,"AreaName":"渑池县"},{"AreaCode":411224,"AreaName":"卢氏县"},{"AreaCode":411281,"AreaName":"义马市"},{"AreaCode":411282,"AreaName":"灵宝市"}],"AreaName":"三门峡市"},{"AreaCode":411300,"ChildAreaCode":[{"AreaCode":411302,"AreaName":"宛城区"},{"AreaCode":411303,"AreaName":"卧龙区"},{"AreaCode":411321,"AreaName":"南召县"},{"AreaCode":411322,"AreaName":"方城县"},{"AreaCode":411323,"AreaName":"西峡县"},{"AreaCode":411324,"AreaName":"镇平县"},{"AreaCode":411325,"AreaName":"内乡县"},{"AreaCode":411326,"AreaName":"淅川县"},{"AreaCode":411327,"AreaName":"社旗县"},{"AreaCode":411328,"AreaName":"唐河县"},{"AreaCode":411329,"AreaName":"新野县"},{"AreaCode":411330,"AreaName":"桐柏县"},{"AreaCode":411381,"AreaName":"邓州市"}],"AreaName":"南阳市"},{"AreaCode":411400,"ChildAreaCode":[{"AreaCode":411402,"AreaName":"梁园区"},{"AreaCode":411403,"AreaName":"睢阳区"},{"AreaCode":411421,"AreaName":"民权县"},{"AreaCode":411422,"AreaName":"睢县"},{"AreaCode":411423,"AreaName":"宁陵县"},{"AreaCode":411424,"AreaName":"柘城县"},{"AreaCode":411425,"AreaName":"虞城县"},{"AreaCode":411426,"AreaName":"夏邑县"},{"AreaCode":411481,"AreaName":"永城市"}],"AreaName":"商丘市"},{"AreaCode":411500,"ChildAreaCode":[{"AreaCode":411502,"AreaName":"浉河区"},{"AreaCode":411503,"AreaName":"平桥区"},{"AreaCode":411521,"AreaName":"罗山县"},{"AreaCode":411522,"AreaName":"光山县"},{"AreaCode":411523,"AreaName":"新县"},{"AreaCode":411524,"AreaName":"商城县"},{"AreaCode":411525,"AreaName":"固始县"},{"AreaCode":411526,"AreaName":"潢川县"},{"AreaCode":411527,"AreaName":"淮滨县"},{"AreaCode":411528,"AreaName":"息县"}],"AreaName":"信阳市"},{"AreaCode":411600,"ChildAreaCode":[{"AreaCode":411602,"AreaName":"川汇区"},{"AreaCode":411621,"AreaName":"扶沟县"},{"AreaCode":411622,"AreaName":"西华县"},{"AreaCode":411623,"AreaName":"商水县"},{"AreaCode":411624,"AreaName":"沈丘县"},{"AreaCode":411625,"AreaName":"郸城县"},{"AreaCode":411626,"AreaName":"淮阳县"},{"AreaCode":411627,"AreaName":"太康县"},{"AreaCode":411628,"AreaName":"鹿邑县"},{"AreaCode":411681,"AreaName":"项城市"}],"AreaName":"周口市"},{"AreaCode":411700,"ChildAreaCode":[{"AreaCode":411702,"AreaName":"驿城区"},{"AreaCode":411721,"AreaName":"西平县"},{"AreaCode":411722,"AreaName":"上蔡县"},{"AreaCode":411723,"AreaName":"平舆县"},{"AreaCode":411724,"AreaName":"正阳县"},{"AreaCode":411725,"AreaName":"确山县"},{"AreaCode":411726,"AreaName":"泌阳县"},{"AreaCode":411727,"AreaName":"汝南县"},{"AreaCode":411728,"AreaName":"遂平县"},{"AreaCode":411729,"AreaName":"新蔡县"}],"AreaName":"驻马店市"},{"AreaCode":419001,"AreaName":"济源市"}],"AreaName":"河南省"}'
+        console.log(JSON.parse(cityList))
+        var cityData = JSON.parse(cityList).ChildAreaCode
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+          var pickerView = new PickerView({
+            bindElem: btn, // 绑定的元素
+            data: cityData, 
+            rightFn: function( selectArr ){  // 点击头部右侧按钮的回调函数，参数为一个数组，数组对应滚轮中每项对应的值
+              console.log(selectArr)
+              document.querySelector(".showText").innerText = `${selectArr.provinceName}-${selectArr.cityName}-${selectArr.areaName}-${selectArr.AreaCode}`;
+            }
+          });
+        }
+
+    </script>
+</body>
+
+</html>
+<style>
+  
+@keyframes slideUp {
+  0% {
+    bottom:-40%;
+  }
+  100% {
+    bottom:0;
+  }
+}
+@-moz-keyframes slideUp {
+  0% {
+    bottom:-40%;
+  }
+  100% {
+    bottom:0;
+  }
+}
+@-webkit-keyframes slideUp {
+  0% {
+    bottom:-40%;
+  }
+  100% {
+    bottom:0;
+  }
+}
+@-o-keyframes slideUp {
+  0% {
+    bottom:-40%;
+  }
+  100% {
+    bottom:0;
+  }
+}
+.pickerView-wrap * {
+    margin:0;
+    padding:0;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing: border-box;
+    font-size: 0;
+}
+.pickerView-wrap {
+    position: fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+}
+.pickerView-mask {
+    height:100%;
+    width:100%;
+    background:rgba(0,0,0,.4);
+}
+.pickerView-box {
+    height:42%;
+    width:100%;
+    position: absolute;
+    left:0;
+    bottom:0;
+    background: #fff;
+    padding-bottom:90px;
+    animation: slideUp 0.3s;
+}
+.pickerView-box-header {
+    text-align: center;
+    height:92px;
+    border-bottom:1px solid #ddd;
+    width:100%;
+    padding:0 50px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: 10;
+    background: #fff;
+}
+.pickerView-box-header>div {
+    line-height: 44px;
+    font-size: 16px;
+}
+.pickerView-box-header-btn {
+    height:100%;
+    width:50px;
+    position: absolute;
+    top:0;
+    color:#108ee9;
+}
+.pickerView-box-header-left {
+  height: 44px;
+  width: 32%;
+  background: #f0f0f0;
+  color: #05c160;
+  border-radius: 8px;
+  position: absolute;
+  left: 10%;
+  top: 23px;
+}
+.pickerView-box-header-right {
+  height: 44px;
+  width: 32%;
+  background: #05c160;
+  color: white;
+  border-radius: 8px;
+  position: absolute;
+  right: 10%;
+  top: 23px;
+}
+.pickerView-box-content-wrap {
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.pickerView-box-content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+}
+.pickerView-box-content-mask {
+    position: absolute;
+    left: 0;
+    bottom:0;
+    height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 3;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.95)), to(rgba(255, 255, 255, 0.6))), -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.95)), to(rgba(255, 255, 255, 0.6)));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
+    background-position: top, bottom;
+    background-size: 100% 102px;
+    background-repeat: no-repeat;
+}
+.pickerView-box-content-indicator {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    position: absolute;
+    left: 0;
+    top: 102px;
+    z-index: 3;
+    border-top: 1PX solid #ddd;
+    border-bottom: 1PX solid #ddd;
+}
+.pickerView-items {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 102px 0;
+    padding: 102px 0px;
+}
+.pickerView-item {
+    touch-action: manipulation;
+    text-align: center;
+    font-size: 16px;
+    height: 34px;
+    line-height: 34px;
+    color: #000;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+</style>
