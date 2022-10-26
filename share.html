@@ -42,6 +42,7 @@
         <button onclick="call('qZone')">QQ空间</button>
         <button onclick="call('weibo')">微博</button>
         <button onclick="setTitle('fa-ge NativeShare')">设置标题</button>
+        <iframe id="iframe4"></iframe>
     </div>
     <script type="text/javascript" src="NativeShare.js"></script>
     <script>
@@ -71,9 +72,19 @@
         }
 
         function setTitle(title) {
-            nativeShare.setShareData({
-                title: title,
-            })
+            let iframeObj = document.getElementById('iframe4')
+              iframeObj.src = 'https://mahengfei120.github.io/M_testHTML/getLocation.html'
+              iframeObj.onload = () => {
+                console.log(iframeObj)
+                console.log(iframeObj.contentWindow)
+                const iframeHeight = iframeObj.contentWindow.parent.innerHeight;
+                iframeObj.style.height = 'auto'
+                alert('第个的高度：' + iframeHeight)
+                iframeObj.style.height = iframeHeight + 'px'
+              }
+//             nativeShare.setShareData({
+//                 title: title,
+//             })
         }
     </script>
 </body>
