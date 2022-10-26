@@ -77,10 +77,10 @@
               iframeObj.onload = () => {
                 console.log(iframeObj)
                 console.log(iframeObj.contentWindow)
-                const iframeHeight = iframeObj.contentWindow.parent.innerHeight;
+                const iframeHeight = iframeObj.contentWindow.document.body.clientHeight;
                 iframeObj.style.height = 'auto'
-                alert('第个的高度：' + iframeHeight)
-                iframeObj.style.height = iframeHeight + 'px'
+                console.log('第个的高度：' + iframeHeight)
+//                 iframeObj.style.height = iframeHeight + 'px'
               }
 //             nativeShare.setShareData({
 //                 title: title,
