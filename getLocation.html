@@ -24,6 +24,7 @@
 		<div class="location_str"></div>
 		<input type="file" accept="image/*" capture="camera" style="background: #cccccc;">
 		<div id="container"></div> 
+		<div class="close">关闭当前浏览器</div>
 		<p class="font_14">这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本
 		这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本这是协议文本</p>
 		<input type="text" style="background: #cccccc;">
@@ -40,6 +41,10 @@
 			font-size: 0.14rem;
 			background: skyblue;
 			border-radius: 0.05rem;
+		}
+		.close {
+			font-size: 0.2rem;
+			color: skyblue;
 		}
 		.test_size{-webkit-text-size-adjus: none;}
 		.font_14{font-size: 0.14rem}
@@ -69,7 +74,12 @@
 			 alert(document.documentElement.clientHeight)
 		 }, 5000)
 	  }
-	
+	document.querySelector('.close').addEventListener('click', function () {
+		alert('关闭微信浏览器')
+		if (WeixinJSBridge) {// 微信中关闭
+			WeixinJSBridge.call('closeWindow');
+		}
+	})
 document.querySelector('.getLocation').addEventListener('click', function () {
 	
 	var options={
